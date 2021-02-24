@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en" class="fa-events-icons-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="game of thrones, boardgame, dice game">
+
+    <link rel="stylesheet" href="./The Iron Race_files/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="./The Iron Race_files/d712a749cb.js.last ned"></script><link href="./The Iron Race_files/d712a749cb.css" media="all" rel="stylesheet">
+    <link rel="stylesheet" href="./The Iron Race_files/styles.css">
+    <title>The Iron Race</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#">
+            <img src="./The Iron Race_files/logo.svg" class="logo" alt="The game logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://127.0.0.1:5500/index.html">
+                        <i class="fa fa-fort-awesome fa-4x"></i> HOME
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#rulesModal">
+                        <i class="fa fa-newspaper-o fa-4x"></i> RULES
+                    </a>
+                </li>
+                <div class="modal" id="rulesModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">GAME RULES</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+                    ×
+                  </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body..</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" data-dismiss="modal">
+                    Close
+                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#changeCharacters">
+                        <i class="fa fa-exchange fa-4x"></i> CHANGE CHARACTERS
+                    </a>
+                </li>
+                <div class="modal" id="changeCharacters">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">CHANGE CHARACTERS</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+                    ×
+                  </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>
+                                    Click on the change button below if you want to select new characters
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" onclick="deleteSelection()" data-dismiss="modal">
+                    Change
+                  </button>
+                                <button type="button" class="btn" data-dismiss="modal">
+                    Close
+                  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>THE IRON RACE</h1>
+        <div id="accordion" class="mt-5 mb-5">
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="card-link" data-toggle="collapse" href="http://127.0.0.1:5500/index.html#collapseBackstory">
+                        <h3>THE IRON RACE BACKSTORY</h3>
+                    </a>
+                </div>
+                <div id="collapseBackstory" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="http://127.0.0.1:5500/index.html#collapseHouses">
+                        <h3>HOUSES</h3>
+                    </a>
+                </div>
+                <div id="collapseHouses" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="http://127.0.0.1:5500/index.html#collapseRules">
+                        <h3>RULES</h3>
+                    </a>
+                </div>
+                <div id="collapseRules" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="startGameModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">PREPARE YOUR SWORDS</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+              ×
+            </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Are you ready to race for the Iron Throne or do you want to change characters?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" onclick="deleteSelection()" data-dismiss="modal">
+              CHANGE CHARACTERS
+            </button>
+                    <button type="button" class="btn" data-dismiss="modal" onclick="toGame()">
+              START GAME
+            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="select-heading">SELECT TWO CHARACTERS</h2>
+        <div class="row card-container"><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/lannister.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">CERSEI LANNISTER</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 266 AC, at Casterly Rock</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Westerman </p></li>
+                <li class="list-group-item cards__info"><p>Alias: The Queen Reagent</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/cersei.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/targaryen.png" alt="Card image cap">
+            <div class="card-body" style="
+    height: 140px;
+    width: 55px;
+">
+                <h4 class="card-title cards__title">DAENERYS TARGARYEN</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 284 AC, at Dragonstone</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Valyrian </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Dany</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/daenerys.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/baratheon.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">STANNIS BARATHEON</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: 264 AC, at Storm's End</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Stormlander </p></li>
+                <li class="list-group-item cards__info"><p>Alias: The King in the Narrow Sea</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/stannis.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/lannister.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">TYRION LANNISTER</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 273 AC, at Casterly Rock</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Westerlands </p></li>
+                <li class="list-group-item cards__info"><p>Alias: The Imp</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/tyrion.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/lannister.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">JAIME LANNISTER</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 266 AC, at Casterly Rock</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Westerlands </p></li>
+                <li class="list-group-item cards__info"><p>Alias: The Kingslayer</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/jaime.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/stark.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">ARYA STARK</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 289 AC, at Winterfell</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Northmen </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Arya Horseface</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/arya.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/stark.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">JON SNOW</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 283 AC, Tower of Joy</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Northmen </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Lord Snow</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/jon.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/greyjoy.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">THEON GREYJOY</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 278 AC or 279 AC, at Pyke</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Ironborn </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Prince of Fools</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/theon.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/stark.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">SANSA STARK</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: In 286 AC, at Winterfell</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Northmen </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Little bird</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/sansa.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div><div class="col-xs-12 col-md-3"><div class="card cards cards-modify">
+            <img class="card-img-top cards__img" src="./The Iron Race_files/greyjoy.png" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title cards__title">EURON GREYJOY</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cards__info"><p>Born: 256-268 AC, at Pyke</p></li>
+                <li class="list-group-item cards__info"><p>Culture: Ironborn </p></li>
+                <li class="list-group-item cards__info"><p>Alias: Crow's Eye</p></li>
+                 <li class="list-group-item cards__info"><img class="card-img-top cards__token" src="./The Iron Race_files/euron.svg" alt="Card image cap"></li>
+            </ul>
+
+                <a class="btn"> SELECT</a>
+
+            </div>
+            </div></div>
+    </div>
+
+    <script src="./The Iron Race_files/jquery-3.5.1.slim.min.js.last ned" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="./The Iron Race_files/popper.min.js.last ned" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="./The Iron Race_files/bootstrap.min.js.last ned" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="./The Iron Race_files/characters.js.last ned"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

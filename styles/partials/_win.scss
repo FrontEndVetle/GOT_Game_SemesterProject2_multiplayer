@@ -1,0 +1,12 @@
+.container-winner {
+    position: relative;
+    top: 50%;
+}
+
+.overlay {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba($bg-win, 0.8);
+    padding: 40px 150px;
+}

@@ -1,0 +1,64 @@
+body {
+    background-color: $bg-color;
+}
+
+
+/*cards*/
+
+.card-container {
+    margin-bottom: 100px;
+}
+
+.list-group-item {
+    padding: 5px;
+}
+
+.cards {
+    background-color: $content-bg;
+    border: $card-border;
+    margin: 20px 8px;
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.08);
+        cursor: pointer;
+    }
+    &__info {
+        background-color: $content-bg;
+        text-align: center;
+    }
+    &__img {
+        width: 100%;
+    }
+    &__token {
+        width: 20%;
+        margin-bottom: 10px;
+    }
+}
+
+.selected-style {
+    border: $selected-card;
+    opacity: 0.8;
+}
+
+//accordion
+.accordion {
+    margin: 40px;
+}
+
+.accor {
+    background-color: $content-bg;
+    margin-top: 2px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) {
+    .cards__index {
+        width: 190px;
+        height: 690px;
+    }
+    .cards {
+        margin: 0;
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,474 @@
+/* Color Theme Swatches in Hex
+$Game-of-thrones-1-hex: #A2C0DC;
+$Game-of-thrones-2-hex: #284C58;
+$Game-of-thrones-3-hex: #4C7B8D;
+$Game-of-thrones-4-hex: #EEF8FA;
+$Game-of-thrones-5-hex: #0A0C0E;/*
+
+/*font*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lato&display=swap");
+/*font size*/
+/*colours*/
+/*font-family and size*/
+body {
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  color: #e0e0e0;
+}
+
+a {
+  color: #e0e0e0;
+}
+
+/*headings*/
+h1 {
+  font-family: "Cinzel Decorative", sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Cinzel Decorative", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.nav-link {
+  font-size: 14px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 14px;
+  }
+  body {
+    font-size: 14px;
+  }
+  .nav-link {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 18px;
+  }
+  body {
+    font-size: 16px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+.sidebar {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #343a3f;
+  overflow-x: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  padding-top: 40px;
+}
+
+.sidebar a {
+  padding: 6px 6px 6px 10px;
+  text-decoration: none;
+  display: block;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 20px;
+}
+
+.openbtn {
+  font-size: 14px;
+  background-color: #343a3f;
+  color: #e0e0e0;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #4d748c;
+}
+
+footer {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  background: #0c0c0c;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .openbtn {
+    font-size: 13px;
+    position: fixed;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sidepanel .closebtn {
+    font-size: 40px;
+  }
+  .openbtn {
+    font-size: 16px;
+    position: fixed;
+  }
+  .sidebar a {
+    padding: 20px 10px 6px 30px;
+  }
+}
+
+body {
+  background-color: #0c0c0c;
+}
+
+/*cards*/
+.card-container {
+  margin-bottom: 100px;
+}
+
+.list-group-item {
+  padding: 5px;
+}
+
+.cards {
+  background-color: #343a3f;
+  border: 3px solid #4d748c;
+  margin: 20px 8px;
+}
+
+.cards:hover {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  cursor: pointer;
+}
+
+.cards__info {
+  background-color: #343a3f;
+  text-align: center;
+}
+
+.cards__img {
+  width: 100%;
+}
+
+.cards__token {
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.selected-style {
+  border: 3px solid #a30d0d;
+  opacity: 0.8;
+}
+
+.accordion {
+  margin: 40px;
+}
+
+.accor {
+  background-color: #343a3f;
+  margin-top: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cards__index {
+    width: 190px;
+    height: 690px;
+  }
+  .cards {
+    margin: 0;
+    margin-top: 30px;
+  }
+}
+
+.story-board {
+  background: url(../images/oldpaper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: auto;
+  display: none;
+  border-radius: 3%;
+  margin-top: 40px;
+  display: block;
+  height: 450px;
+}
+
+.story-board__event {
+  margin-top: 30px;
+  color: #2e2e2e;
+  padding: 10px;
+}
+
+.game-area {
+  left: 100px;
+  border: 3px solid #4d748c;
+  background: #0c0c0c;
+  margin-bottom: 100px;
+  padding: 30px;
+  width: 1900px;
+}
+
+.square {
+  position: absolute;
+  width: 73px;
+  height: 73px;
+  border: 1px solid;
+}
+
+.square:nth-child(1) {
+  background: url(../images/start.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.square:nth-child(38) {
+  background: url(../images/logo.svg) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: top !important;
+}
+
+.square__joker {
+  background: url(../images/joker.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.game-token {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.game-token__fighters {
+  left: 45%;
+  width: 40px;
+  margin-top: 10px;
+}
+
+.game-token__player1 {
+  margin-top: 20px;
+  width: 34px;
+  height: 45px;
+}
+
+.game-token__player2 {
+  height: 34px;
+  width: 85px;
+  clear: both;
+}
+
+.joker-modal__img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.game-mechanics {
+  left: 65px;
+}
+
+.cards__game {
+  height: 320px;
+  width: 170px;
+  margin-top: 36px;
+}
+
+.cards__game:hover {
+  pointer-events: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.player-turn {
+  text-align: right;
+  margin: 20px 5px 0px;
+  text-align: center;
+}
+
+.player-turn__token {
+  margin-left: 10px;
+  width: 35px;
+}
+
+.roller-container {
+  margin-top: 75px;
+}
+
+.roller-container__dice {
+  width: 50px;
+  height: 50px;
+  margin-left: 85px;
+}
+
+.board {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  margin-top: 8px;
+}
+
+.rotate {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.rotate.down {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.container-winner {
+  position: relative;
+  top: 50%;
+}
+
+.overlay {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(46, 46, 46, 0.8);
+  padding: 40px 150px;
+}
+
+canvas {
+  width: 100%;
+}
+
+.fa {
+  margin-right: 10px;
+  float: left;
+}
+
+.logo {
+  width: 65px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.logo__win {
+  width: 100px;
+}
+
+a:hover {
+  color: #a09f9f;
+  cursor: pointer;
+}
+
+body {
+  background: url(../images/map.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn {
+  font-size: 12px;
+}
+
+.btn {
+  background-color: #2c4459;
+  border: #2c4459;
+  padding: 10px;
+  width: 100%;
+  font-size: 12px;
+  color: #e0e0e0;
+}
+
+.btn__roll {
+  width: 100px;
+  height: 60px;
+  padding: 5px;
+  margin-left: 22px;
+}
+
+.btn:hover {
+  background-color: #4d748c;
+  color: #e0e0e0;
+}
+
+.modal-content {
+  background-color: #343a3f;
+}
+
+.modal {
+  top: 20%;
+}
+
+.modal-content {
+  border: 3px solid #4d748c;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .btn {
+    font-size: 14px;
+  }
+  .logo {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 1100px;
+  }
+  .logo {
+    width: 200px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+  .logo__win {
+    width: 300px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,50 @@
+/* Color Theme Swatches in Hex
+$Game-of-thrones-1-hex: #A2C0DC;
+$Game-of-thrones-2-hex: #284C58;
+$Game-of-thrones-3-hex: #4C7B8D;
+$Game-of-thrones-4-hex: #EEF8FA;
+$Game-of-thrones-5-hex: #0A0C0E;/*
+
+/*font*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lato&display=swap");
+$heading-stack: "Cinzel Decorative",
+sans-serif;
+$font-stack: "Lato",
+sans-serif;
+
+/*font size*/
+
+$heading-size-m: 16px;
+$heading-size-t: 24px;
+$heading-size-d: 40px;
+$nav-text-d: 16px;
+$nav-text-m: 14px;
+$nav-text-t: 13px;
+$sub-heading-d: 24px;
+$sub-heading-t: 16px;
+$sub-heading-m: 14px;
+$local-heading-d: 18px;
+$local-heading-t: 14px;
+$local-heading-m: 12px;
+$body-text-d: 16px;
+$body-text-t: 14px;
+$body-text-m: 12px;
+$btn-text-d: 16px;
+$btn-text-t: 14px;
+$btn-text-m: 12px;
+
+/*colours*/
+
+$text-color-dark: #2e2e2e;
+$bg-color: #0c0c0c;
+$bg-win: #2e2e2e;
+$text-color: #e0e0e0;
+$link-hover: #a09f9f;
+$btn-color: #2c4459;
+$btn-hover: #4d748c;
+$hover-a: #343a3f;
+$content-bg: #343a3f;
+$card-border: 3px solid #4d748c;
+$event-bg: #050505;
+$selected-card: 3px solid #a30d0d;

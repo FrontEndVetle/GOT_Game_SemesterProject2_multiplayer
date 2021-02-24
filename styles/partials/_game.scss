@@ -1,0 +1,138 @@
+//storyboard
+.story-board {
+    background: url(../images/oldpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    overflow: auto;
+    display: none;
+    border-radius: 3%;
+    margin-top: 40px;
+    display: block;
+    height: 450px;
+    &__event {
+        margin-top: 30px;
+        color: $text-color-dark;
+        padding: 10px;
+    }
+}
+
+//gameboard
+.game-area {
+    left: 100px;
+    border: $card-border;
+    background: $bg-color;
+    margin-bottom: 100px;
+    padding: 30px;
+    width: 1900px;
+}
+
+.square {
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border: 1px solid;
+    &:nth-child(1) {
+        background: url(../images/start.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    &:nth-child(38) {
+        background: url(../images/logo.svg) !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: top !important;
+    }
+    &__joker {
+        background: url(../images/joker.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+    }
+}
+
+//tokens on gameboard
+.game-token {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    &__fighters {
+        left: 45%;
+        width: 40px;
+        margin-top: 10px;
+    }
+    &__player1 {
+        margin-top: 20px;
+        width: 34px;
+        height: 45px;
+    }
+    &__player2 {
+        height: 34px;
+        width: 85px;
+        clear: both;
+    }
+}
+
+//joker images events
+.joker-modal__img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.game-mechanics {
+    left: 65px;
+}
+
+.cards__game {
+    height: 320px;
+    width: 170px;
+    margin-top: 36px;
+    &:hover {
+        pointer-events: none;
+        box-shadow: none;
+        box-shadow: none;
+        transition: none;
+        transform: none;
+    }
+}
+
+//whos turn to throw
+.player-turn {
+    text-align: right;
+    margin: 20px 5px 0px;
+    text-align: center;
+    &__token {
+        margin-left: 10px;
+        width: 35px;
+    }
+}
+
+//roller-container
+.roller-container {
+    margin-top: 75px;
+    &__dice {
+        width: 50px;
+        height: 50px;
+        margin-left: 85px;
+    }
+}
+
+.board {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    margin-top: 8px;
+}
+
+.rotate {
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+.rotate.down {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}

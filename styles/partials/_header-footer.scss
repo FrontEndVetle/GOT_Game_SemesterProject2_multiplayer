@@ -1,0 +1,65 @@
+//nav
+.sidebar {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $content-bg;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 40px;
+}
+
+.sidebar a {
+    padding: 6px 6px 6px 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.4s;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 20px;
+}
+
+.openbtn {
+    font-size: $nav-text-m;
+    background-color: $content-bg;
+    color: $text-color;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: $btn-hover;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background: $bg-color;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .openbtn {
+        font-size: $nav-text-t;
+        position: fixed;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .sidepanel .closebtn {
+        font-size: 40px;
+    }
+    .openbtn {
+        font-size: $nav-text-d;
+        position: fixed;
+    }
+    .sidebar a {
+        padding: 20px 10px 6px 30px;
+    }
+}

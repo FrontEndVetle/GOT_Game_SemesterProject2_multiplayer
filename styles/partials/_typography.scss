@@ -1,0 +1,81 @@
+/*font-family and size*/
+
+body {
+    font-size: $body-text-m;
+    font-family: $font-stack;
+    color: $text-color;
+}
+
+a {
+    color: $text-color;
+}
+
+
+/*headings*/
+
+h1 {
+    font-family: $heading-stack;
+    font-size: $heading-size-m;
+    text-align: center;
+}
+
+h2 {
+    font-family: $heading-stack;
+    font-size: $sub-heading-m;
+    text-align: center;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-stack;
+    font-size: $local-heading-m;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: $nav-text-m;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    h1 {
+        font-size: $heading-size-t;
+    }
+    h2 {
+        font-size: $sub-heading-t;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: $local-heading-t;
+    }
+    body {
+        font-size: $body-text-t;
+    }
+    .nav-link {
+        font-size: $nav-text-t;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: $heading-size-d;
+    }
+    h2 {
+        font-size: $sub-heading-d;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: $local-heading-d;
+    }
+    body {
+        font-size: $body-text-d;
+    }
+    .nav-link {
+        font-size: $nav-text-d;
+    }
+}

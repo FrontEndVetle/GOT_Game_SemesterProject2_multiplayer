@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords" content="game of thrones, boardgame, dice game, snakes and ladders" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://use.fontawesome.com/d712a749cb.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>The Iron race gameboard</title>
+</head>
+
+<body>
+    <audio id="tokenAudio" src="sound/token-audio.mp3" alt="token sound by Zapsplat.com"></audio>
+    <audio id="diceAudio" src="sound/dice.mp3" alt="thrown dice sound by Zapsplat.com"></audio>
+
+    <header>
+        <button class="openbtn" onclick="openNav()">MENU ☰</button>
+        <div id="sideBar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <h4>MAIN MENU</h4>
+            <a class="nav-link" href="index.html">
+                <i class="fa fa-fort-awesome"></i> HOME
+
+            </a>
+            <a class="nav-link" data-toggle="modal" data-target="#rulesModal">
+                <i class="fa fa-newspaper-o"></i> RULES
+
+            </a>
+            <a class="nav-link" href="game.html">
+                <i class="fa fa-undo"></i> RESTART GAME
+            </a>
+            <button class="btn btn-primary" onclick="enableMute()" type="button"><i class="fa fa-volume-off"></i>MUTE SOUND </button>
+            <button class="btn btn-primary" onclick="disableMute()" type="button"><i class="fa fa-volume-up"></i>ENABLE SOUND </button>
+
+        </div>
+
+        <div class="modal" id="rulesModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">GAME RULES</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            The Iron Race will occur as a duel between two characters. Pick one character for player 1 and one for player 2. The goal is to get to the Iron Throne before your challenger. You take turns throwing the dice and move as many spaces as the dice eyes shows.
+                            If you roll a six you get another throw.
+                        </p>
+                        <p>
+                            Beware of the jokers spread across the board of Westeros. They can give you good fortune or grief if you land on them. They will either send you spaces ahead or make you go backwards.
+                        </p>
+                        When a player has reached the Iron Throne they have won and can celebrate with their companions.
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">
+                Close
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <a href="index.html">
+                <img src="images/logo.svg" class="logo" alt="The game logo" />
+            </a>
+        </div>
+    </div>
+    <div class="modalsHere"></div>
+
+    <div class="container game-area">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                <h2>STORY SO FAR</h2>
+                <div class="story-board">
+                    <ul class="story-board__list" id="story-board-list"></ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 game-board">
+                <h1 class="ml-5">GAMEBOARD</h1>
+                <div id="board" class="board"></div>
+            </div>
+            <div class="col-xs-12 col-md-4 game-mechanics">
+                <div class="row">
+                    <div class="col-6 player">
+                        <h2>PLAYER 1</h2>
+                    </div>
+                    <div class="col-6 player2">
+                        <h2>PLAYER 2</h2>
+                    </div>
+                </div>
+
+                <div class="container roller-container">
+                    <div class="row">
+                        <div class="col-5">
+                            <button type="button" id="rollBtn" onclick="rollDice();" class="btn btn__roll rotate">
+                  ROLL THE DICE
+                </button>
+                        </div>
+                        <div class="col-5">
+                            <!--<div id="dice"></div>-->
+                            <img id="dice" class="dice roller-container__dice" src="icons/dice1.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="nextPlayer"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-copyright text-center"><small>© 2020 Copyright: Eilert Vetle Førland</small>
+                        <a href="https://github.com/FrontEndVetle.com/"> Github link</a>
+
+                    </div>
+                    <div class="col-12">
+                        <div class="text-center"><small>Sound courtesy by</small>
+                            <a href="https://Zapsplat.com/"> Zapsplat.com</a>
+                        </div>
+                    </div>
+                </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+    <script src="js/game.js "></script>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>

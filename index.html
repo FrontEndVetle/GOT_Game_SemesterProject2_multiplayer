@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="keywords" content="game of thrones, boardgame, dice game" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://use.fontawesome.com/d712a749cb.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>The Iron Race Homepage</title>
+</head>
+
+<body>
+    <header>
+        <button class="openbtn" onclick="openNav()">MENU ☰</button>
+        <div id="sideBar" class="sidebar toggle-sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <h4>MAIN MENU</h4>
+            <a class="nav-link" href="index.html">
+                <i class="fa fa-fort-awesome"></i> HOME
+            </a>
+            <a class="nav-link" data-toggle="modal" data-target="#rulesModal">
+                <i class="fa fa-newspaper-o"></i> RULES
+            </a>
+            <a class="nav-link" data-toggle="modal" data-target="#changeCharacters">
+                <i class="fa fa-exchange"></i> CHANGE CHARACTERS
+            </a>
+        </div>
+
+        <div class="modal" id="rulesModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">GAME RULES</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            The Iron Race will occur as a duel between two characters. Pick one character for player 1 and one for player 2. The goal is to get to the Iron Throne before your challenger. You take turns throwing the dice and move as many spaces as the dice eyes shows.
+                            If you roll a six you get another throw.
+                        </p>
+                        <p>
+                            Beware of the jokers spread across the board of Westeros. They can give you good fortune or grief if you land on them. They will either send you spaces ahead or make you go backwards.
+                        </p>
+                        When a player has reached the Iron Throne they have won and can celebrate with their companions.
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">
+                Close
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="changeCharacters">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">CHANGE CHARACTERS</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            Click on the change button below if you want to select new characters
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" onClick="deleteSelection()" data-dismiss="modal">
+                Change
+              </button>
+                        <button type="button" class="btn" data-dismiss="modal">
+                Close
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <a href="index.html">
+                <img src="images/logo.svg" class="logo" alt="The game logo" />
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>THE IRON RACE</h1>
+        <div id="accordion" class="mt-5 mb-5">
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseBackstory">
+                        <h3>THE IRON RACE BACKSTORY</h3>
+                    </a>
+                </div>
+                <div id="collapseBackstory" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Winter is closing in on Westeros and a threat moves in from the north. The heroes of Westeros need to balance their focus on the new enemy as well as the Iron Throne. Each hero wants the glory for their house but most importantly the power to reign and
+                            decide Westeros’ faith. Who will win the Iron race for the throne and who will be left in the snow of winter?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseHouses">
+                        <h3>HOUSES</h3>
+                    </a>
+                </div>
+                <div id="collapseHouses" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            There are 10 heroes from 5 great houses competing for the Iron Throne:
+                        </p>
+                        <p>
+                            House Stark the principal noble house of the North. Their base is in Winterfell and their slogan is “Winter is Coming”.
+                        </p>
+                        <p>
+                            House Baratheon has its seat at Storms End. Their slogan is “Ours is the Fury”.
+                        </p>
+                        <p>
+                            House Targaryen had formerly their seat in Dragonstone. They formerly ruled the seven kingdoms of Westeros. The house is closer to dragons than any other men. Their slogan is “Fire and Blood”.
+                        </p>
+                        <p>
+                            House Greyjoy has their seat in Pyke. Their slogan is “What is Dead May Never Die”. They are known for their large fleet of ships.
+                        </p>
+                        <p>
+                            House Lannister has their seat at Casterly Rock and in Kings Landing. Their slogan is “Hear Me Roar”.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card accor">
+                <div class="card-header accor__header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseRules">
+                        <h3>RULES</h3>
+                    </a>
+                </div>
+                <div id="collapseRules" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            The Iron Race will occur as a duel between two characters. Pick one character for player 1 and one for player 2. The goal is to get to the Iron Throne before your challenger. You take turns throwing the dice and move as many spaces as the dice eyes shows.
+                            If you roll a six you get another throw.
+                        </p>
+                        <p>
+                            Beware of the jokers spread across the board of Westeros. They can give you good fortune or grief if you land on them. They will either send you spaces ahead or make you go backwards.
+                        </p>
+                        When a player has reached the Iron Throne they have won and can celebrate with their companions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="startGameModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">PREPARE YOUR SWORDS</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Are you ready to race for the Iron Throne or do you want to change characters?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" onClick="deleteSelection()" data-dismiss="modal">
+              CHANGE CHARACTERS
+            </button>
+                    <button type="button" class="btn" data-dismiss="modal" onclick="toGame()">
+              START GAME
+            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="select-heading">SELECT TWO CHARACTERS</h2>
+        <div class="row card-container"></div>
+    </div>
+
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-copyright text-center"><small>© 2020 Copyright: Eilert Vetle Førland</small>
+                        <a href="https://github.com/FrontEndVetle.com/"> Github link</a>
+
+                    </div>
+                    <div class="col-12">
+                        <div class="text-center"><small>Sound courtesy by</small>
+                            <a href="https://Zapsplat.com/"> Zapsplat.com</a>
+                        </div>
+                    </div>
+                </div>
+    </footer>
+    <script src="https://cdn.socket.io/3.1.1/socket.io.min.js" integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO" crossorigin="anonymous"></script>
+
+    <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+    <script src="js/characters.js "></script>
+    <script src="js/nav.js "></script>
+</body>
+
+</html>

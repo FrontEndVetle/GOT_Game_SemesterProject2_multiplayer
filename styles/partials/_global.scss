@@ -1,0 +1,96 @@
+canvas {
+    width: 100%;
+}
+
+//icons
+.fa {
+    margin-right: 10px;
+    float: left;
+}
+
+//logo
+.logo {
+    width: 65px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    &__win {
+        width: 100px;
+    }
+}
+
+//links
+a:hover {
+    color: $link-hover;
+    cursor: pointer;
+}
+
+//game background
+body {
+    background: url(../images/map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//buttons
+.btn {
+    font-size: $btn-text-m;
+}
+
+.btn {
+    background-color: $btn-color;
+    border: $btn-color;
+    padding: 10px;
+    width: 100%;
+    font-size: $btn-text-m;
+    color: $text-color;
+    &__roll {
+        width: 100px;
+        height: 60px;
+        padding: 5px;
+        margin-left: 22px;
+    }
+    &:hover {
+        background-color: $btn-hover;
+        color: $text-color;
+    }
+}
+
+.modal-content {
+    background-color: $content-bg;
+}
+
+//modals
+.modal {
+    top: 20%;
+    &-content {
+        border: $card-border;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .btn {
+        font-size: $btn-text-t;
+    }
+    //logo
+    .logo {
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .btn {
+        font-size: $btn-text-d;
+    }
+    .container {
+        max-width: 1100px;
+    }
+    //logo
+    .logo {
+        width: 200px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+        &__win {
+            width: 300px;
+        }
+    }
+}
