@@ -231,13 +231,26 @@ body {
   border-radius: 3%;
   margin-top: 40px;
   display: block;
-  height: 450px;
+  height: 390px;
 }
 
 .story-board__event {
   margin-top: 30px;
   color: #2e2e2e;
   padding: 10px;
+}
+
+.chat-form__btn {
+  width: 50px;
+  margin-top: 20px;
+}
+
+.chat-form__input {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #0c0c0c;
+  color: #e0e0e0;
+  border: 3px solid #4d748c;
 }
 
 .game-area {

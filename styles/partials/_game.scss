@@ -9,11 +9,26 @@
     border-radius: 3%;
     margin-top: 40px;
     display: block;
-    height: 450px;
+    height: 390px;
     &__event {
         margin-top: 30px;
         color: $text-color-dark;
         padding: 10px;
+    }
+}
+
+//chat
+.chat-form {
+    &__btn {
+        width: 50px;
+        margin-top: 20px;
+    }
+    &__input {
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: $bg-color;
+        color: $text-color;
+        border: $card-border;
     }
 }
 
