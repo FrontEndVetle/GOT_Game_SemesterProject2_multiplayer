@@ -1,10 +1,38 @@
 //get DOM elements
-const storyBoard = document.getElementById("story-board-list");
-const modalBoard = document.querySelector(".modalsHere");
-let playerTurn = document.getElementById("nextPlayer");
+const storyBoard = document.getElementById('story-board-list');
+const modalBoard = document.querySelector('.modalsHere');
+let playerTurn = document.getElementById('nextPlayer');
 let boardHTML;
 let moveAudio;
 let diceAudio;
+
+//multiplayer
+const log = (text) => {
+    const liEvent = document.createElement('li');
+    const online = document.createTextNode(text);
+    storyBoard.prepend(liEvent);
+    liEvent.append(online);
+    liEvent.classList.add('story-board__event');
+};
+
+const onChatSubmitted = (sock) => (e) => {
+    e.preventDefault();
+    const input = document.querySelector('#chat');
+    const text = input.value;
+    input.value = '';
+
+    sock.emit('message', text);
+};
+
+(() => {
+    const sock = io();
+
+    sock.on('message', log);
+
+    document
+        .querySelector('#chat-form')
+        .addEventListener('submit', onChatSubmitted(sock));
+})();
 
 //player starts
 let currentPlayerTurn = 0;
@@ -23,12 +51,12 @@ function disableMute() {
     diceAudio.muted = false;
 }
 
-var player = JSON.parse(localStorage.getItem("player"));
-var player2 = JSON.parse(localStorage.getItem("player2"));
+var player = JSON.parse(localStorage.getItem('player'));
+var player2 = JSON.parse(localStorage.getItem('player2'));
 
 function createPlayer() {
-    var player = JSON.parse(localStorage.getItem("player"));
-    let playerDisplay = document.querySelector(".player");
+    var player = JSON.parse(localStorage.getItem('player'));
+    let playerDisplay = document.querySelector('.player');
     playerDisplay.innerHTML += `
     <div class="card cards cards__game">
     <img class="card-img-top cards__img cards__img--game" src="${player.banner}" alt="house banner">
@@ -38,7 +66,7 @@ function createPlayer() {
                   </div>
                         </div>
                         <img class="game-token game-token__fighters" src="${player.token}" alt="player token">`;
-    playerTurn.innerHTML = "";
+    playerTurn.innerHTML = '';
     playerTurn.innerHTML += `
            <p class="player-turn">NEXT PLAYER IS ${player.name}<img class="player-turn__token" src="${player.token}" alt="player token"></p>
             `;
@@ -46,9 +74,9 @@ function createPlayer() {
 createPlayer();
 
 function createplayer2() {
-    var player2 = JSON.parse(localStorage.getItem("player2"));
+    var player2 = JSON.parse(localStorage.getItem('player2'));
 
-    let player2Display = document.querySelector(".player2");
+    let player2Display = document.querySelector('.player2');
     player2Display.innerHTML += `
     <div class="card cards cards__game">
     <img class="card-img-top cards__img" src="${player2.banner}" alt="house banner">
@@ -62,13 +90,13 @@ function createplayer2() {
 createplayer2();
 
 //spin button to animate the roll and make unclickable for 2,7 secounds
-$(".rotate").click(function() {
-    diceAudio = document.getElementById("diceAudio");
+$('.rotate').click(function() {
+    diceAudio = document.getElementById('diceAudio');
     diceAudio.play();
-    $(this).toggleClass("down");
-    document.getElementById("rollBtn").disabled = true;
+    $(this).toggleClass('down');
+    document.getElementById('rollBtn').disabled = true;
     setTimeout(function() {
-        document.getElementById("rollBtn").disabled = false;
+        document.getElementById('rollBtn').disabled = false;
     }, 2700);
 });
 
@@ -81,21 +109,21 @@ window.rollDice = () => {
     currentPlayer.throws++;
     showTurn();
 
-    const liEvent = document.createElement("li");
     const rolledEvent = document.createTextNode(
-        currentPlayer.name + " ROLLED " + roll
+        currentPlayer.name + ' ROLLED ' + roll
     );
+    const liEvent = document.createElement('li');
     storyBoard.prepend(liEvent);
     liEvent.append(rolledEvent);
-    liEvent.classList.add("story-board__event");
+    liEvent.classList.add('story-board__event');
 
     //change dice image depending on roll
 
     function updateDie() {
-        var dice = document.querySelector("#dice");
+        var dice = document.querySelector('#dice');
         setTimeout(() => {
-            $(this).toggleClass("down");
-            dice.setAttribute("src", currentRoll.path);
+            $(this).toggleClass('down');
+            dice.setAttribute('src', currentRoll.path);
         }, 400);
     }
 
@@ -104,7 +132,7 @@ window.rollDice = () => {
     //add dice value to current position of player and animate movement
     var counter = 0;
     var interval = setInterval(function() {
-        moveAudio = document.getElementById("tokenAudio");
+        moveAudio = document.getElementById('tokenAudio');
         moveAudio.play();
 
         counter++;
@@ -148,16 +176,16 @@ window.rollDice = () => {
   </div>
   </div>
                     `;
-                $("#jokerModal").modal("show");
+                $('#jokerModal').modal('show');
 
                 //show joker event in storyboard
-                const liEvent = document.createElement("li");
                 const jokerEvent = document.createTextNode(
                     currentPlayer.name + joker.description
                 );
+                const liEvent = document.createElement('li');
                 storyBoard.prepend(liEvent);
                 liEvent.append(jokerEvent);
-                liEvent.classList.add("story-board__event");
+                liEvent.classList.add('story-board__event');
             }
         });
     }
@@ -184,12 +212,12 @@ function showTurn() {
     }
 
     if (roll === 6) {
-        playerTurn.innerHTML = "";
+        playerTurn.innerHTML = '';
         playerTurn.innerHTML += `
              <p class="player-turn">${currentPlayer.name} ROLLED A SIX AND CAN ROLL AGAIN!<img class="player-turn__token" src="${currentPlayer.token}" alt="player token"></p>
             `;
     } else {
-        playerTurn.innerHTML = "";
+        playerTurn.innerHTML = '';
         playerTurn.innerHTML += `
              <p class="player-turn">NEXT PLAYER IS ${players[nextPlayer].name}<img class="player-turn__token" src="${players[nextPlayer].token}" alt="player token"></p>
             `;
@@ -198,25 +226,25 @@ function showTurn() {
 
 //dice images
 const diceEyes = [{
-        path: "",
+        path: '',
     },
     {
-        path: "icons/dice1.png",
+        path: 'icons/dice1.png',
     },
     {
-        path: "icons/dice2.png",
+        path: 'icons/dice2.png',
     },
     {
-        path: "icons/dice3.png",
+        path: 'icons/dice3.png',
     },
     {
-        path: "icons/dice4.png",
+        path: 'icons/dice4.png',
     },
     {
-        path: "icons/dice5.png",
+        path: 'icons/dice5.png',
     },
     {
-        path: "icons/dice6.png",
+        path: 'icons/dice6.png',
     },
 ];
 
@@ -225,14 +253,14 @@ const players = [{
         name: player.name,
         position: 0,
         token: player.token,
-        class: "game-token__player1",
+        class: 'game-token__player1',
         throws: 0,
     },
     {
         name: player2.name,
         position: 0,
         token: player2.token,
-        class: "game-token__player2",
+        class: 'game-token__player2',
         throws: 0,
     },
 ];
@@ -242,51 +270,51 @@ const jokers = [{
         start: 3,
         end: 2,
         description: " HIDES DURING NED STARK'S EXECUTION AND RETREATS 1 SPACE",
-        img: "images/eddard.png",
+        img: 'images/eddard.png',
     },
     {
         start: 5,
         end: 18,
         description: " GET'S A RIDE BY VISERION THE DRAGON FOR 13 SPACES",
-        img: "images/dragon.jpg",
+        img: 'images/dragon.jpg',
     },
     {
         start: 7,
         end: 9,
-        description: " IS EXHAUSTED AND GETS CARRIED 2 SPACES BY HODOR",
-        img: "images/hodor.jpg",
+        description: ' IS EXHAUSTED AND GETS CARRIED 2 SPACES BY HODOR',
+        img: 'images/hodor.jpg',
     },
     {
         start: 14,
         end: 1,
-        description: " MUST GO INTO HIDING AFTER THE RED WEDDING. MOVE BACK TO START",
-        img: "images/wedding.jpg",
+        description: ' MUST GO INTO HIDING AFTER THE RED WEDDING. MOVE BACK TO START',
+        img: 'images/wedding.jpg',
     },
     {
         start: 16,
         end: 15,
-        description: "FINDS OUT ABOUT THE SONS OF THE HARPY COUP, AND HIDES 1 SPACE BACK",
-        img: "images/harpy.jpg",
+        description: 'FINDS OUT ABOUT THE SONS OF THE HARPY COUP, AND HIDES 1 SPACE BACK',
+        img: 'images/harpy.jpg',
     },
 
     {
         start: 19,
         end: 12,
-        description: " FIGHT HOPELESSLY IN THE BATTLE OF HARDHOME. ROW BACK 7 SPACES",
-        img: "images/hardhome.jpg",
+        description: ' FIGHT HOPELESSLY IN THE BATTLE OF HARDHOME. ROW BACK 7 SPACES',
+        img: 'images/hardhome.jpg',
     },
 
     {
         start: 24,
         end: 26,
-        description: "HEARD THAT THE NIGHT KING IS DEAD. NO BOUNDARIES LEFT, RUN TWO SPACES FORWARD",
-        img: "images/winter.jpg",
+        description: 'HEARD THAT THE NIGHT KING IS DEAD. NO BOUNDARIES LEFT, RUN TWO SPACES FORWARD',
+        img: 'images/winter.jpg',
     },
     {
         start: 25,
         end: 15,
-        description: "IS MED BY A ROGUE DROGON, RETREAT FOR YOUR LIFE 10 SPACES",
-        img: "images/dragon.jpg",
+        description: 'IS MED BY A ROGUE DROGON, RETREAT FOR YOUR LIFE 10 SPACES',
+        img: 'images/dragon.jpg',
     },
 ];
 
@@ -306,7 +334,7 @@ for (var y = height; y >= 0; y--) {
             y,
             occupied: null,
             position,
-            color: pattern ? "#2C4459" : "#000",
+            color: pattern ? '#2C4459' : '#000',
         });
         pattern = !pattern;
         position++;
@@ -316,21 +344,21 @@ for (var y = height; y >= 0; y--) {
 const boardSize = 75;
 //render Gameboard
 const renderBoard = () => {
-    let boardHTML = "";
+    let boardHTML = '';
     board.forEach((row) => {
         row.forEach((square) => {
             boardHTML += `<div class="square" style="top:${
-        square.y * boardSize
-      }px; left:${square.x * boardSize}px; background-color:${
-        square.color
-      }"></div>`;
+				square.y * boardSize
+			}px; left:${square.x * boardSize}px; background-color:${
+				square.color
+			}"></div>`;
             jokers.forEach((joker) => {
                 if (joker.start === square.position) {
                     boardHTML += `<div class="square square__joker" style="top:${
-            square.y * boardSize
-          }px; left:${square.x * boardSize}px; background-color:${
-            square.jokers
-          }"></div>`;
+						square.y * boardSize
+					}px; left:${square.x * boardSize}px; background-color:${
+						square.jokers
+					}"></div>`;
                 }
             });
         });
@@ -343,25 +371,25 @@ const renderBoard = () => {
             row.forEach((square) => {
                 if (square.position === player.position) {
                     boardHTML += `<img class="game-token ${player.class}" src="${
-            player.token
-          }" id="boardToken" alt="player token" style="top:${
-            square.y * boardSize + 8
-          }px; left:${square.x * boardSize + 8}px;">`;
+						player.token
+					}" id="boardToken" alt="player token" style="top:${
+						square.y * boardSize + 8
+					}px; left:${square.x * boardSize + 8}px;">`;
                 }
                 //change token style if players are on same tile.
                 if (players[0].position !== players[1].position) {
-                    player.class = "";
+                    player.class = '';
                 } else {
-                    (players[0].class = "game-token__player1"),
-                    (players[1].class = "game-token__player2");
+                    (players[0].class = 'game-token__player1'),
+                    (players[1].class = 'game-token__player2');
                 }
             });
         });
     });
 
     //board placement
-    document.getElementById("board").innerHTML = boardHTML;
-    boardHTML = document.getElementById("board");
+    document.getElementById('board').innerHTML = boardHTML;
+    boardHTML = document.getElementById('board');
 };
 renderBoard();
 
@@ -373,6 +401,6 @@ function loadWinner() {
         token: currentPlayer.token,
         throws: currentPlayer.throws,
     };
-    localStorage.setItem("winner", JSON.stringify(winner));
-    window.location.replace("win.html");
+    localStorage.setItem('winner', JSON.stringify(winner));
+    window.location.replace('win.html');
 }
