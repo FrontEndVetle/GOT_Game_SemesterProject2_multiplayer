@@ -37,7 +37,7 @@ function disableMute() {
 
 (() => {
     const sock = io();
-    sock.on('turn', ({ roll }) => console.log(roll));
+    sock.on('turn', ({ roll }) => diceEvents(roll));
     sock.on('message', log);
 
     document
@@ -99,14 +99,17 @@ function disableMute() {
         }, 2700);
     });
 
-    //dice roll and and token movement
     window.rollDice = () => {
         const max = 6;
         roll = Math.ceil(Math.random() * max);
+        sock.emit('turn', { roll });
+    };
+
+    //dice roll and and token movement
+    diceEvents = (roll) => {
         currentPlayer = players[currentPlayerTurn];
         currentRoll = diceEyes[roll];
         currentPlayer.throws++;
-        sock.emit('turn', { roll });
         showTurn();
 
         const rolledEvent = document.createTextNode(
@@ -156,26 +159,26 @@ function disableMute() {
                     currentPlayer.position = joker.end;
                     modalBoard.innerHTML = `
         <div class="modal" id="jokerModal">
-           <div class="modal-dialog">
-    <div class="modal-content">
+            <div class="modal-dialog">
+             <div class="modal-content">
 
-      <div class="modal-header">
-        <h4 class="modal-title">YOU LANDED ON A JOKER!</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+                <div class="modal-header">
+                <h4 class="modal-title">YOU LANDED ON A JOKER!</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-      <div class="modal-body">
-       <img src="${joker.img}" class="joker-modal__img" alt="joker image" style="width="100%""/>
-        ${currentPlayer.name} ${joker.description}
-      </div>
+                <div class="modal-body">
+                <img src="${joker.img}" class="joker-modal__img" alt="joker image" style="width="100%""/>
+                    ${currentPlayer.name} ${joker.description}
+                </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-  </div>
-                    `;
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+                            `;
                     $('#jokerModal').modal('show');
 
                     //show joker event in storyboard
