@@ -29,12 +29,41 @@
                 <i class="fa fa-newspaper-o"></i> RULES
 
             </a>
+            <a class="nav-link" data-toggle="modal" data-target="#multiModal">
+                <i class="fa fa-newspaper-o"></i> MULTIPLAYER
+
+            </a>
             <a class="nav-link" href="game.html">
                 <i class="fa fa-undo"></i> RESTART GAME
             </a>
             <button class="btn btn-primary" onclick="enableMute()" type="button"><i class="fa fa-volume-off"></i>MUTE SOUND </button>
             <button class="btn btn-primary" onclick="disableMute()" type="button"><i class="fa fa-volume-up"></i>ENABLE SOUND </button>
 
+        </div>
+
+        <div class="modal" id="multiModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">MULTIPLAYER</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            Send the URL to a friend to make the game multiplayer.
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">
+                Close
+              </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="modal" id="rulesModal">
